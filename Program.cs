@@ -12,20 +12,8 @@ namespace ArangeArrayDescending
                 .Select(int.Parse)
                 .ToArray();
 
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                // numebrs[i]; -> currentNumb
-
-                for (int j = i + 1; j < numbers.Length; j++)  ////5 2 4 10 -> arrange this descending // firsNum must be always maxValue;
-                {
-                    if (numbers[i] < numbers[j])
-                    {
-                        int tempNub = numbers[i];
-                        numbers[i] = numbers[j];
-                        numbers[j] = tempNub;
-                    }
-                }
-            }
+            Array.Sort(numbers); // sorting an array form lowest value to the maxValue
+            Array.Reverse(numbers);  //sorting the array from MaxValue to LowestValue
 
             Console.WriteLine();
             Console.WriteLine(string.Join(' ', numbers));
